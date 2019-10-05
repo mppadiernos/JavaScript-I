@@ -81,11 +81,10 @@ console.log(`Car 33 is a ${inventory[32].car_year} ${inventory[32].car_make} ${i
 // The dealer needs the information on the last car in their inventory.  What is the make and model of the last car in the inventory?  Log the make and model into the console.
 // let lastCar =`The last car of the inventory is ${ inventory[49].car_make} ${inventory[49].car_model}`;
 let lastCar = inventory[inventory.length - 1];
-console.log(`The last car of the inventory is a ${ lastCar.car_make} ${lastCar.car_model}`);
+console.log(`The last car of the inventory is a ${lastCar.car_make} ${lastCar.car_model}`);
 
 // ==== Challenge 3 ====
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
-let carModels = inventory;
 let carModelsSorted = inventory.sort((a,b) => (a.car_model > b.car_model) ? 1:-1);
 console.log(carModelsSorted);
 
@@ -116,5 +115,5 @@ let a = inventory.filter(function(car){
 let b = inventory.filter(function(car){
   return car.car_make === 'Audi';
 });
-let BMWAndAudi = a.concat(b);
+let BMWAndAudi = JSON.stringify(a.concat(b));
 console.log(BMWAndAudi);
